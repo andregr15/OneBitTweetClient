@@ -4,15 +4,8 @@ import './index.css';
 import App from './App';
 import registerServiceWorker from './registerServiceWorker';
 
-import { createStore, combineReducers } from 'redux';
 import { Provider } from 'react-redux';
-import TrendingTopicsReducer from './containers/TrendingTopicsContainer/reducer.js';
-
-const Reducers = combineReducers({
-  trendings: TrendingTopicsReducer
-});
-
-const Store = createStore(Reducers);
+import Store from './configureStore';
 
 ReactDOM.render(
   <Provider store={Store}>
