@@ -1,4 +1,4 @@
-import { createStore, applyMiddleware } from 'redux';
+import { createStore, applyMiddleware, compose } from 'redux';
 import Reducers from './reducers';
 import thunk from 'redux-thunk';
 
@@ -10,6 +10,17 @@ export const history = createHistory();
 const history_middleware = routerMiddleware(history);
 // End routes imports
 
-const Store = createStore(Reducers, applyMiddleware(history_middleware, thunk));
+const devtools = window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__() 
+
+const Store = createStore(
+  Reducers, 
+  compose(
+    applyMiddleware(
+      history_middleware, 
+      thunk
+    ),
+    devtools
+  )
+);
 
 export default Store;
