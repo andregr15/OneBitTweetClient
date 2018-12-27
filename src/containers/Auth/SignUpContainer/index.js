@@ -1,5 +1,8 @@
 import React, { Component } from 'react';
 import SignUp from '../../../components/Auth/SignUp';
+import { register } from './actions';
+import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
 
 class SignUpContainer extends Component {
   constructor(){
@@ -8,7 +11,7 @@ class SignUpContainer extends Component {
   }
 
   handleSubmit(form) {
-    console.log(form);
+    this.props.register(form);
   }
 
   render() {
@@ -16,4 +19,12 @@ class SignUpContainer extends Component {
   }
 }
 
-export default SignUpContainer;
+function mapStateToProps(state) {
+  return { }
+};
+
+function mapDispatchToProps(dispatch) {
+  return bindActionCreators({ register }, dispatch);
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(SignUpContainer);
