@@ -21,6 +21,11 @@ const ProfileEdit = (props) => (
           </Row>
 
           <Row>
+            <Row className="center">
+              <Col m={4} className="offset-m4">
+                <ProfileImage src={props.image_preview} className="responsive-img circle"/>
+              </Col>
+            </Row>
             <Col m={12} s={12} offset="">
               <div className="form">
 
@@ -29,9 +34,15 @@ const ProfileEdit = (props) => (
                     name: props.name,
                     email: props.email,
                     description: props.description,
-                    id: props.id
+                    id: props.id,
+                    image_preview: props.image_preview
                   }}
                   >
+
+                  <Control.file model=".photo"
+                    onChange={(value) => props.encodeFile(value)}
+                    style={{ 'marginBottom': '20px' }}/>
+
                   <Control.text model=".name"
                     name="name"
                     placeholder="Name"/>

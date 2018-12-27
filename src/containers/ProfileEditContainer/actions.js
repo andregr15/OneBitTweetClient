@@ -1,4 +1,5 @@
 import API, { HEADER } from '../../api.js';
+import { UPDATE_IMAGE_PREVIEW } from './constants';
 
 export function updateUserInfo({id, name, email, description, photo}) {
   const params = {'user': {name, email, description, photo}};
@@ -22,4 +23,11 @@ export function updateUserPassword({id, password, password_confirmation}) {
       error => window.Materialize.toast('Problem in password update.', 4000, 'red')
     );
   };
+}
+
+export function updateImagePreview(image_preview) {
+  return {
+    type: UPDATE_IMAGE_PREVIEW,
+    payload: image_preview
+  }
 }
