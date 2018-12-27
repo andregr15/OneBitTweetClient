@@ -1,9 +1,9 @@
 import React from 'react';
 import { Navbar, NavItem, Row, Icon } from 'react-materialize';
 
-
 import logo from '../../images/logo.png';
 import styled from 'styled-components';
+import { getPortPromise } from 'portfinder';
 
 const NavbarBlue = styled(Navbar)`
   background-color: #75d3f4;`
@@ -17,15 +17,15 @@ const IconUser = styled(Icon)`
   font-size: 40px !important;`
 ;
 
-const Header = () => (
+const Header = (props) => (
   <Row>
-    <NavbarBlue brand={
-          <Logo src={logo} alt='OneBitTwitter' className='responsive-img col m6 center logo'/>
+    <NavbarBlue href="/timeline" brand={
+        <Logo src={logo} alt='OneBitTwitter' className='responsive-img col m6 center logo'/>
       } right className='navbar'>
-      <NavItem href='/logout'>
+      <NavItem onClick={() => props.logOut()}>
         Logout
       </NavItem>
-      <NavItem href='/user/x/edit'>
+      <NavItem href={`/user/${props.id}/edit`}>
         <IconUser>account_circle</IconUser>
       </NavItem>
     </NavbarBlue>
