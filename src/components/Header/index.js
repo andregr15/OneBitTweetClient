@@ -3,7 +3,6 @@ import { Navbar, NavItem, Row, Icon } from 'react-materialize';
 
 import logo from '../../images/logo.png';
 import styled from 'styled-components';
-import { getPortPromise } from 'portfinder';
 
 const NavbarBlue = styled(Navbar)`
   background-color: #75d3f4;`
