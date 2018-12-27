@@ -1,8 +1,6 @@
 import React from 'react';
 import { Row, Col, Card } from 'react-materialize';
 import MainLayout from '../MainLayout';
-import UserInforContainer from '../../containers/UserInfoContainer';
-import TrendingTopicsContainer from '../../containers/TrendingTopicsContainer';
 import { LocalForm, Control } from 'react-redux-form';
 import styled from 'styled-components';
 
@@ -26,7 +24,14 @@ const ProfileEdit = (props) => (
             <Col m={12} s={12} offset="">
               <div className="form">
 
-                <LocalForm onSubmit={(values) => props.updateProfile(values) }>
+                <LocalForm onSubmit={(values) => props.updateProfile(values) }
+                  initialState={{
+                    name: props.name,
+                    email: props.email,
+                    description: props.description,
+                    id: props.id
+                  }}
+                  >
                   <Control.text model=".name"
                     name="name"
                     placeholder="Name"/>
@@ -58,7 +63,11 @@ const ProfileEdit = (props) => (
             <Col m={12} s={12} offset="">
               <div className="form">
 
-                <LocalForm onSubmit={(values) => props.updatePassword(values) }>
+                <LocalForm onSubmit={(values) => props.updatePassword(values) }
+                  initialState={{
+                    id: props.id
+                  }}
+                >
                   <Control.text model=".password"
                     type="password"
                     placeholder="Password"/>
