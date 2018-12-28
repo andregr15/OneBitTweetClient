@@ -6,6 +6,7 @@ import JustifiedText from '../common/JustifiedText';
 
 import UserFollow from '../../containers/UserFollow';
 import UserUnFollow from '../../containers/UserUnFollow';
+import fake_avatar from '../../images/fake_avatar.png';
 
 const Avatar = styled.img`
   margin-top: 8px;
@@ -16,7 +17,7 @@ const UserInfo = (props) => (
   <Card>
     <RowNoBottomMargin>
       <Col m={8} s={8} offset="m2 s2" className="center">
-        <Avatar src={ props.photo } className="responsive-img circle m10"/>
+        <Avatar src={ (props.photo && props.photo.url)? props.photo.url : fake_avatar } className="responsive-img circle m10"/>
       </Col>
     </RowNoBottomMargin>
     <RowNoBottomMargin>
