@@ -1,47 +1,16 @@
 import React, { Component } from 'react';
 import TweetUnit from '../../components/TweetUnit';
-import photo from '../../images/fake_avatar.png';
+import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
+
 
 class TweetListContainer extends Component {
-  constructor(props) {
-    super(props);
-
-    this.state = {
-      tweets: []
-    };
-  };
-
-  componentDidMount() {
-    this.setState({
-      tweets:  [
-        {
-          id: "x",
-          body: "Trending Topics Trending Topics Trending Topics Trending Topics Trending Topics Trending Topics Trending Topics Trending Topics",
-          time: "17h",
-          user: {
-            id: "x",
-            name: "Loren Ipsun",
-            photo: photo                
-          }
-        }, {
-          id: "x",
-          body: "Trending Topics Trending Topics Trending Topics Trending Topics Trending Topics Trending Topics Trending Topics Trending Topics",
-          time: "17h",
-          user: {
-            id: "x",
-            name: "Loren Ipsun",
-            photo: photo                
-          }
-        }
-      ]
-    })
-  }
-
   render() {
+    var tweets_list = this.props.tweets.length ? (this.props.tweets) : []
     return (
       <div>
         {
-          this.state.tweets.map(
+          tweets_list.map(
             (tweet, i) => <TweetUnit {...tweet} key={i} />
           )
         }
@@ -50,4 +19,12 @@ class TweetListContainer extends Component {
   }
 }
 
-export default TweetListContainer;
+function mapStateToProps(state){
+  return { tweets: state.tweets };
+}
+
+function mapDispatchToProps(dispatch){
+  return bindActionCreators({ }, dispatch);
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(TweetListContainer);

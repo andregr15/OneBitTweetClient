@@ -3,6 +3,7 @@ import { Row, Col, Card, Icon, Dropdown, NavItem } from 'react-materialize';
 import styled from 'styled-components';
 import RowNoBottomMargin from '../common/RowNoBottomMargin';
 import InvisibleButton from '../common/InvisibleButton';
+import fake_avatar from '../../images/fake_avatar.png';
 
 const Avatar = styled.img`
   width:100%`
@@ -12,7 +13,7 @@ const TweetUnit = (props) => (
   <Card>
     <RowNoBottomMargin>
       <Col s={6} m={2} offset="s3">
-        <Avatar src={props.user.photo} className="responsive-img circle" />
+        <Avatar src={(props.user.photo && props.user.photo.url)? props.user.photo.url : fake_avatar} className="responsive-img circle" />
       </Col>
       <Col s={12} m={10}>
         <RowNoBottomMargin>
@@ -37,7 +38,7 @@ const TweetUnit = (props) => (
         <Row>
           <Col s={12} m={12}>
             {props.body}
-          </Col>
+          </Col> 
         </Row>
         <RowNoBottomMargin>
           <Col s={1} m={1}>
