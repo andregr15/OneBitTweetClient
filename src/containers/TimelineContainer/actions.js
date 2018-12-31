@@ -6,7 +6,7 @@ export function setUserInfo(user) {
   return ({ type: UPDATE_USER_INFO, payload: user });
 }
 
-export function getTimeline(id) {
+export function getTimeline() {
   const request = API.get('/timeline', { headers: HEADER });
   return(dispatch) => {
     request.then(

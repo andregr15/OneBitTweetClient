@@ -7,19 +7,19 @@ class UserInfoContainer extends Component {
 
   render() {
     return (
-      <UserInfo {...this.props.user}/>
+      <UserInfo {...this.props.user} />
     );
   }
 }
 
-function mapStateToProps(state, ownProps){
+function mapStateToProps(state, ownProps) {
   return {
     user: state.user
   };
 };
 
-function mapDispatchToProps(dispatch){
-  return bindActionCreators({ }, dispatch);
+function mapDispatchToProps(dispatch) {
+  return bindActionCreators({}, dispatch);
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(UserInfoContainer);

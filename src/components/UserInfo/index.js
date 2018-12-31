@@ -41,7 +41,7 @@ const UserInfo = (props) => (
               <Icon>message</Icon>
             </Col>
             <Col m={6}>
-              { props.tweets }
+              { props.tweets_count }
             </Col>
           </RowNoBottomMargin>
         </a>
@@ -53,7 +53,7 @@ const UserInfo = (props) => (
               <Icon>people</Icon>
             </Col>
             <Col m={6}>
-              { props.followers }
+              { props.followers_count }
             </Col>
           </RowNoBottomMargin>
         </a>
@@ -65,7 +65,7 @@ const UserInfo = (props) => (
               <Icon>people_outline</Icon>
             </Col>
             <Col m={6}>
-              { props.follow }
+              { props.following_count }
             </Col>
           </RowNoBottomMargin>
         </a>
