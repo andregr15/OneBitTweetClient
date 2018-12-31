@@ -1,5 +1,5 @@
 import API, { HEADER } from '../../api';
-import { SET_TWEETS, DELETE_TWEET } from './constants';
+import { DELETE_TWEET } from './constants';
 
 export function deleteTweet(id){
   const request = API.delete(`/tweets/${id}`, { headers: HEADER });

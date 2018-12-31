@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import ProfilePage from '../../components/ProfilePage';
-import { routerMiddleware, push } from 'react-router-redux';
 import { getUserInfo, getTweetList } from './actions';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
