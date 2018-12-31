@@ -13,8 +13,21 @@ const Avatar = styled.img`
   width: 100%;`
 ;
 
+const CardCustom = styled(Card)`
+  .card-content {
+    background: linear-gradient(
+      to bottom, 
+      #616161 0%,
+      #616161 50%,
+      #000 50%,
+      white 50%,
+      white 100%
+    )
+  }
+`;
+
 const UserInfo = (props) => (
-  <Card>
+  <CardCustom>
     <RowNoBottomMargin>
       <Col m={8} s={8} offset="m2 s2" className="center">
         <Avatar src={ (props.photo && props.photo.url)? props.photo.url : fake_avatar } className="responsive-img circle m10"/>
@@ -71,7 +84,7 @@ const UserInfo = (props) => (
         </a>
       </Col>
     </RowNoBottomMargin>
-  </Card>
+  </CardCustom>
 );
 
 export default UserInfo;
