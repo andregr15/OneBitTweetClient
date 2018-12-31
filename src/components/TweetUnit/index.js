@@ -29,7 +29,7 @@ const TweetUnit = (props) => (
               <NavItem>
                 <span className="grey-text text-darken-2">Edit</span>
               </NavItem>
-              <NavItem>
+              <NavItem onClick={() => props.deleteTweet(props.id)}>
                 <span className="grey-text text-darken-2">Remove</span>
               </NavItem>
             </Dropdown>
