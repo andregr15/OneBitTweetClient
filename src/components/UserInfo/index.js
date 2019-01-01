@@ -30,20 +30,22 @@ const UserInfo = (props) => (
   <CardCustom>
     <RowNoBottomMargin>
       <Col m={8} s={8} offset="m2 s2" className="center">
-        <Avatar src={ (props.photo && props.photo.url)? props.photo.url : fake_avatar } className="responsive-img circle m10"/>
+        <Avatar src={ (props.user.photo && props.user.photo.url)? props.user.photo.url : fake_avatar } className="responsive-img circle m10"/>
       </Col>
     </RowNoBottomMargin>
     <RowNoBottomMargin>
       <Col m={9} s={9}>
-        <b className="grey-text text-darken-2">{ props.name }</b>
+        <b className="grey-text text-darken-2">{ props.user.name }</b>
       </Col>
-      <Col m={3} s={3}>
-        { props.followed ? <UserFollow/> : <UserUnFollow/> }
-      </Col>
+      { props.user.id !== props.current_user.id &&
+        <Col m={3} s={3}>
+          { props.user.followed ? <UserFollow id={props.user.id}/> : <UserUnFollow id={props.user.id}/> }
+        </Col>
+      }
     </RowNoBottomMargin>
     <Row>
       <Col m={12}>
-        <JustifiedText>{ props.description }</JustifiedText>
+        <JustifiedText>{ props.user.description }</JustifiedText>
       </Col>
     </Row>
     <RowNoBottomMargin>
@@ -54,7 +56,7 @@ const UserInfo = (props) => (
               <Icon>message</Icon>
             </Col>
             <Col m={6}>
-              { props.tweets_count }
+              { props.user.tweets_count }
             </Col>
           </RowNoBottomMargin>
         </a>
@@ -66,7 +68,7 @@ const UserInfo = (props) => (
               <Icon>people</Icon>
             </Col>
             <Col m={6}>
-              { props.followers_count }
+              { props.user.followers_count }
             </Col>
           </RowNoBottomMargin>
         </a>
@@ -78,7 +80,7 @@ const UserInfo = (props) => (
               <Icon>people_outline</Icon>
             </Col>
             <Col m={6}>
-              { props.following_count }
+              { props.user.following_count }
             </Col>
           </RowNoBottomMargin>
         </a>
