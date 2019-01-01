@@ -1,4 +1,4 @@
-import { FETCH_TWEETS, DELETE_TWEET, ADD_TWEET } from './constants';
+import { FETCH_TWEETS, DELETE_TWEET, ADD_TWEET, TWEET_LIKE, TWEET_UNLIKE } from './constants';
 
 const initialState = { tweets: [] };
 
@@ -10,6 +10,12 @@ export default function(state = initialState, action){
       return state.filter(tweet=> tweet.id !== action.payload)
     case ADD_TWEET:
       return [action.payload, ...state]
+    case TWEET_LIKE:
+      state.find(tweet => tweet.id === action.payload).liked = true
+      return [...state]
+    case TWEET_UNLIKE:
+      state.find(tweet => tweet.id === action.payload).liked = false
+      return [...state]
     default:
       return state;
   }

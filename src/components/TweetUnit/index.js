@@ -4,6 +4,8 @@ import styled from 'styled-components';
 import RowNoBottomMargin from '../common/RowNoBottomMargin';
 import InvisibleButton from '../common/InvisibleButton';
 import fake_avatar from '../../images/fake_avatar.png';
+import TweetLiked from '../../containers/TweetLiked';
+import TweetUnliked from '../../containers/TweetUnliked';
 
 const Avatar = styled.img`
   width:100%`
@@ -44,9 +46,7 @@ const TweetUnit = (props) => (
         </Row>
         <RowNoBottomMargin>
           <Col s={1} m={1}>
-            <InvisibleButton>
-              <Icon>thumb_up</Icon>
-            </InvisibleButton>
+            { props.liked? <TweetLiked id={props.id}/> : <TweetUnliked id={props.id}/> }
           </Col>
           <Col s={1} m={1}>
             <InvisibleButton>

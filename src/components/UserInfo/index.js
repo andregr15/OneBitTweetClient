@@ -38,7 +38,7 @@ const UserInfo = (props) => (
         <b className="grey-text text-darken-2">{ props.name }</b>
       </Col>
       <Col m={3} s={3}>
-        { props.followed ? <UserUnFollow/> : <UserFollow/> }
+        { props.followed ? <UserFollow/> : <UserUnFollow/> }
       </Col>
     </RowNoBottomMargin>
     <Row>
