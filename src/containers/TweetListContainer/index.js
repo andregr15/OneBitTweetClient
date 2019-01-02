@@ -17,7 +17,7 @@ class TweetListContainer extends Component {
   }
 
   postTweet(event){
-    if(event.keyCode == 13) { // is enter key?
+    if(event.keyCode === 13) { // is enter key?
       this.props.createTweet(event.target.value);
       event.target.value = "";
     }
