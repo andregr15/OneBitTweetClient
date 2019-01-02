@@ -7,14 +7,15 @@ class UserInfoContainer extends Component {
 
   render() {
     return (
-      <UserInfo {...this.props.user} />
+      <UserInfo {...this.props} />
     );
   }
 }
 
 function mapStateToProps(state, ownProps) {
   return {
-    user: state.user
+    user: state.user,
+    current_user: state.current_user
   };
 };
 
