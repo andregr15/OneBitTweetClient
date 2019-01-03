@@ -1,5 +1,5 @@
 import API, { HEADER } from '../../api';
-import { DELETE_TWEET, ADD_TWEET, TWEET_LIKE, TWEET_UNLIKE } from './constants';
+import { DELETE_TWEET, ADD_TWEET, TWEET_LIKE, TWEET_UNLIKE, UPDATE_TWEET } from './constants';
 
 export function deleteTweet(id){
   const request = API.delete(`/tweets/${id}`, { headers: HEADER });
@@ -57,6 +57,21 @@ export function retweet(body, tweet_original_id){
     request.then(
       resp => dispatch({ type: ADD_TWEET, payload: resp.data }),
       error => window.Materialize.toast('Problem in retweet Tweet', 4000, 'red')
+    );
+  };
+}
+
+export function updateTweet(body, id){
+  const request = API.put(
+    `/tweets/${id}`, 
+    { body: body },
+    { headers: HEADER}
+  );
+
+  return(dispatch) => {
+    request.then(
+      resp => dispatch({ type: UPDATE_TWEET, payload: resp.data }),
+      error => window.Materialize.toast('Problem in update Tweet', 4000, 'red')
     );
   };
 }

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Row, Col, Card, Icon, Dropdown, NavItem } from 'react-materialize';
+import { Row, Col, Card, Icon, Dropdown, NavItem, Modal, Button } from 'react-materialize';
 import styled from 'styled-components';
 import RowNoBottomMargin from '../common/RowNoBottomMargin';
 import InvisibleButton from '../common/InvisibleButton';
@@ -7,7 +7,8 @@ import fake_avatar from '../../images/fake_avatar.png';
 import TweetLiked from '../../containers/TweetLiked';
 import TweetUnliked from '../../containers/TweetUnliked';
 import RetweetContainer from '../../containers/RetweetContainer';
-import Retweet from '../Retweet';
+import RetweetUnit from '../RetweetUnit';
+import EditTweetContainer from '../../containers/EditTweetContainer';
 
 const Avatar = styled.img`
   width:100%`
@@ -31,9 +32,7 @@ const TweetUnit = (props) => (
                 <Icon>expand_more</Icon>
               </InvisibleButton>
             }>
-              <NavItem>
-                <span className="grey-text text-darken-2">Edit</span>
-              </NavItem>
+              <EditTweetContainer {...props}/>
               <NavItem onClick={() => props.deleteTweet(props.id)}>
                 <span className="grey-text text-darken-2">Remove</span>
               </NavItem>
@@ -46,7 +45,7 @@ const TweetUnit = (props) => (
             {props.body}
           </Col> 
         </Row>
-        { props.tweet_original_id !== null && <Retweet {...props.tweet_original}/> }
+        { props.tweet_original_id !== null && <RetweetUnit {...props.tweet_original}/> }
         <RowNoBottomMargin>
           <Col s={1} m={1}>
             { props.liked? <TweetLiked id={props.id}/> : <TweetUnliked id={props.id}/> }

@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import { Icon, Modal, Button, Col, Row } from 'react-materialize';
+import { Icon, Modal, Button } from 'react-materialize';
 import InvisibleButton from '../../components/common/InvisibleButton';
-import RetweetUnit from '../../components/RetweetUnit';
+import EditRetweetUnit from '../../components/EditRetweetUnit';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import styled from 'styled-components';
@@ -30,7 +30,6 @@ class RetweetContainer extends Component {
   handleChanged(event) {
     this.body = event.target.value;
     event.preventDefault();
-    console.log(this.body);
   }
 
   render(){
@@ -57,7 +56,7 @@ class RetweetContainer extends Component {
             tooltip="Retweet">
               <Icon>repeat</Icon>
         </InvisibleButton>}>
-      <RetweetUnit {...this.props} handleChanged={this.handleChanged}/>
+      <EditRetweetUnit {...this.props} handleChanged={this.handleChanged}/>
     </Modal>
     );
   };
