@@ -1,5 +1,5 @@
 import React from 'react';
-import { Row, Col, Card, Input, Icon } from 'react-materialize';
+import { Row, Col, Card } from 'react-materialize';
 import styled from 'styled-components';
 import RowNoBottomMargin from '../common/RowNoBottomMargin';
 import fake_avatar from '../../images/fake_avatar.png';
@@ -8,7 +8,7 @@ const Avatar = styled.img`
   width:100%`
 ;
 
-const RetweetUnit = (props) => (
+const Retweet = (props) => (
   <Card>
     <RowNoBottomMargin>
       <Col s={6} m={2} offset="s3">
@@ -17,6 +17,7 @@ const RetweetUnit = (props) => (
       <Col s={12} m={10}>
         <RowNoBottomMargin>
           <Col s={10} m={10}>
+            <b className="blue-text lighten-2">Retweet - </b>
             <b>{props.user.name} - {props.time}</b>
           </Col>
         </RowNoBottomMargin>
@@ -25,15 +26,9 @@ const RetweetUnit = (props) => (
             {props.body}
           </Col> 
         </Row>
-        <RowNoBottomMargin>
-          <Input s={12} maxLength="200" onChange={(event)=> props.handleChanged(event)}
-            label="What are you thinking about this tweet?" validate className="text-red">
-              <Icon>send</Icon>
-            </Input>
-        </RowNoBottomMargin>
       </Col>
     </RowNoBottomMargin>
   </Card>
 );
 
-export default RetweetUnit;
+export default Retweet;

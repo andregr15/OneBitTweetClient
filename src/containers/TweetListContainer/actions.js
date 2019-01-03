@@ -45,3 +45,18 @@ export function tweetUnlike(id) {
     );
   };
 }
+
+export function retweet(body, tweet_original_id){
+  const request = API.post(
+    '/tweets', 
+    { body: body, tweet_original_id: tweet_original_id },
+    { headers: HEADER}
+  );
+
+  return(dispatch) => {
+    request.then(
+      resp => dispatch({ type: ADD_TWEET, payload: resp.data }),
+      error => window.Materialize.toast('Problem in retweet Tweet', 4000, 'red')
+    );
+  };
+}
