@@ -1,11 +1,20 @@
 import React from 'react';
 import { Tabs, Tab } from 'react-materialize';
+import FollowersContainer from '../../containers/FollowersContainer';
+import FollowingsContainer from '../../containers/FollowingsContainer';
+import TweetsContainer from '../../containers/TweetsContainer';
 
 const DashboardUnit = () => (
   <Tabs className='tab-demo z-depth-1'>
-    <Tab title="Followers" active>Test 1</Tab>
-    <Tab title="Follwings">Test 2</Tab>
-    <Tab title="Tweets">Test 3</Tab>
+    <Tab title="Followers" active>
+      <FollowersContainer />
+    </Tab>
+    <Tab title="Follwings">
+      <FollowingsContainer />
+    </Tab>
+    <Tab title="Tweets">
+      <TweetsContainer />
+    </Tab>
   </Tabs>
 );
 
