@@ -1,5 +1,5 @@
 import React from 'react';
-import { Row, Col, Card, Icon, Dropdown, NavItem, Modal, Button } from 'react-materialize';
+import { Row, Col, Card, Icon, Dropdown, NavItem } from 'react-materialize';
 import styled from 'styled-components';
 import RowNoBottomMargin from '../common/RowNoBottomMargin';
 import InvisibleButton from '../common/InvisibleButton';

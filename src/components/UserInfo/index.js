@@ -7,6 +7,7 @@ import JustifiedText from '../common/JustifiedText';
 import UserFollow from '../../containers/UserFollow';
 import UserUnFollow from '../../containers/UserUnFollow';
 import fake_avatar from '../../images/fake_avatar.png';
+import Link from 'react-router-dom/Link';
 
 const Avatar = styled.img`
   margin-top: 8px;
@@ -50,7 +51,7 @@ const UserInfo = (props) => (
     </Row>
     <RowNoBottomMargin>
       <Col m={4}>
-        <a href="#" className="grey-text text-darken-2">
+        <Link to='/dashboard' className="grey-text text-darken-2">
           <RowNoBottomMargin className="tooltipped" data-tooltip="Tweets">
             <Col m={5}>
               <Icon>message</Icon>
@@ -59,10 +60,10 @@ const UserInfo = (props) => (
               { props.user.tweets_count }
             </Col>
           </RowNoBottomMargin>
-        </a>
+        </Link>
       </Col>
       <Col m={4}>
-        <a href="#" className="grey-text text-darken-2">
+        <Link to='/dashboard' className="grey-text text-darken-2">
           <RowNoBottomMargin className="tooltipped" data-tooltip="Followers">
             <Col m={5}>
               <Icon>people</Icon>
@@ -71,10 +72,10 @@ const UserInfo = (props) => (
               { props.user.followers_count }
             </Col>
           </RowNoBottomMargin>
-        </a>
+        </Link>
       </Col>
       <Col m={4}>
-        <a href="#" className="grey-text text-darken-2">
+        <Link to='/dashboard' className="grey-text text-darken-2">
           <RowNoBottomMargin className="tooltipped" data-tooltip="Followed">
             <Col m={5}>
               <Icon>people_outline</Icon>
@@ -83,7 +84,7 @@ const UserInfo = (props) => (
               { props.user.following_count }
             </Col>
           </RowNoBottomMargin>
-        </a>
+        </Link>
       </Col>
     </RowNoBottomMargin>
   </CardCustom>
