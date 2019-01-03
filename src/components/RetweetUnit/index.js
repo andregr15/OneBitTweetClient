@@ -12,7 +12,7 @@ const Avatar = styled.img`
   width:100%`
 ;
 
-const TweetUnit = (props) => (
+const RetweetUnit = (props) => (
   <Card>
     <RowNoBottomMargin>
       <Col s={6} m={2} offset="s3">
@@ -23,22 +23,6 @@ const TweetUnit = (props) => (
           <Col s={10} m={10}>
             <b>{props.user.name} - {props.time}</b>
           </Col>
-          <Col s={2} m={2} className="right-align">
-          { props.current_user.id === props.user.id &&
-            <Dropdown trigger={
-              <InvisibleButton>
-                <Icon>expand_more</Icon>
-              </InvisibleButton>
-            }>
-              <NavItem>
-                <span className="grey-text text-darken-2">Edit</span>
-              </NavItem>
-              <NavItem onClick={() => props.deleteTweet(props.id)}>
-                <span className="grey-text text-darken-2">Remove</span>
-              </NavItem>
-            </Dropdown>
-          }
-          </Col>
         </RowNoBottomMargin>
         <Row>
           <Col s={12} m={12}>
@@ -46,16 +30,11 @@ const TweetUnit = (props) => (
           </Col> 
         </Row>
         <RowNoBottomMargin>
-          <Col s={1} m={1}>
-            { props.liked? <TweetLiked id={props.id}/> : <TweetUnliked id={props.id}/> }
-          </Col>
-          <Col s={1} m={1}>
-            <RetweetContaier {...props}/>
-          </Col>
+        
         </RowNoBottomMargin>
       </Col>
     </RowNoBottomMargin>
   </Card>
 );
 
-export default TweetUnit;
+export default RetweetUnit;
