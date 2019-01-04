@@ -3,15 +3,14 @@ import Dashboard from '../../components/Dashboard';
 import { setUserInfo } from '../TimelineContainer/actions';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
+import { getUserTweets } from './actions';
 
 
 class DashboardContainer extends Component {
-  constructor() {
-    super();
-  }
 
   componentDidMount() {
     this.props.setUserInfo(this.props.current_user);
+    this.props.getUserTweets(this.props.current_user.id);
   }
 
   render() {
@@ -26,7 +25,7 @@ function mapStateToProps(state) {
 }
 
 function mapDispatchToProps(dispatch) {
-  return bindActionCreators({ setUserInfo }, dispatch);
+  return bindActionCreators({ setUserInfo, getUserTweets }, dispatch);
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(DashboardContainer);

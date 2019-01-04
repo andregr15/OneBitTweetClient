@@ -6,10 +6,6 @@ import { getFollowers } from './actions';
 import RowNoBottomMargin from '../../components/common/RowNoBottomMargin';
 
 class FollowersContainer extends Component {
-  constructor() {
-    super();
-  }
-
   componentDidMount(){
     this.props.getFollowers(this.props.current_user.id);
   }

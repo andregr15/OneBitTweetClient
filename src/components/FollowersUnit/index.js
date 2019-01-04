@@ -1,7 +1,6 @@
 import React from 'react';
-import { Col, Card, Icon } from 'react-materialize';
+import { Col, Card } from 'react-materialize';
 import RowNoBottomMargin from '../common/RowNoBottomMargin';
-import InvisibleButton from '../common/InvisibleButton';
 import JustifiedText from '../common/JustifiedText';
 import fake_avatar from '../../images/fake_avatar.png';
 import styled from 'styled-components';
