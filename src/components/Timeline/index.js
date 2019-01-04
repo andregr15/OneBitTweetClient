@@ -12,7 +12,7 @@ const Timeline = () => (
         <UserInfoContainer/>
       </Col>
       <Col s={12} m={6}>
-        <TweetListContainer/>
+        <TweetListContainer timeline={true} />
       </Col>
       <Col s={12} m={3}>
         <TrendingTopicsContainer/>
