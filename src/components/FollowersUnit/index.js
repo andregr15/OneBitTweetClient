@@ -30,7 +30,7 @@ const FollowersUnit = (props) => (
     <CardCustom>
       <RowNoBottomMargin>
         <Col s={12}>
-          <Avatar src={fake_avatar} className="img-resposive circle"/>
+        <Avatar src={ (props.photo && props.photo.url)? props.photo.url : fake_avatar } className="responsive-img circle m10"/>
         </Col>
       </RowNoBottomMargin>
       <RowNoBottomMargin>
