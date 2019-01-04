@@ -27,14 +27,14 @@ const Header = (props) => (
         <Logo src={logo} alt='OneBitTwitter' className='responsive-img col m6 center logo'/>
       } right className='navbar'>
       <NavItem onClick={() => {return false;}}>
-        <Form>
+        <Form onSubmit={(values) => props.search(values) }>
           <Control.text model=".search" 
             name="search"
             placeholder="Search"
             style={{ 
-              'background-color': 'white', 
-              'border-radius': '30px', 
-              'text-align': 'center',
+              'backgroundColor': 'white', 
+              'borderRadius': '30px', 
+              'textAlign': 'center',
               'color': 'black'
             }}/>
         </Form>

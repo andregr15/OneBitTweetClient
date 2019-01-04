@@ -7,6 +7,7 @@ import TimelineContainer from './containers/TimelineContainer';
 import PrivateRoute from './containers/Auth/PrivateRoute';
 import ProfileEditContainer from './containers/ProfileEditContainer';
 import DashboardContainer from './containers/DashboardContainer';
+import SearchResultContainer from './containers/SearchResultContainer';
 
 class App extends Component {
   render() {
@@ -18,6 +19,7 @@ class App extends Component {
           <PrivateRoute exact path='/timeline' component={TimelineContainer} />
           <PrivateRoute exact path='/user/:id/edit' component={ProfileEditContainer} />
           <PrivateRoute exact path='/dashboard' component={DashboardContainer} />
+          <PrivateRoute exact path='/search' component={SearchResultContainer} />
         </Switch>
       </div>
     );

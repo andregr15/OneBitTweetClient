@@ -5,6 +5,7 @@ import InvisibleButton from '../common/InvisibleButton';
 import JustifiedText from '../common/JustifiedText';
 import fake_avatar from '../../images/fake_avatar.png';
 import styled from 'styled-components';
+import Link from 'react-router-dom/Link';
 
 const Avatar = styled.img`
   height: 70px;
@@ -31,12 +32,16 @@ const FollowingsUnit = (props) => (
     <CardCustom>
       <RowNoBottomMargin>
         <Col s={12}>
-          <Avatar src={ (props.photo && props.photo.url)? props.photo.url : fake_avatar } className="responsive-img circle m10"/>
+          <Link to={`/user/${props.id}`}>
+            <Avatar src={ (props.photo && props.photo.url)? props.photo.url : fake_avatar } className="responsive-img circle m10"/>
+          </Link>
         </Col>
       </RowNoBottomMargin>
       <RowNoBottomMargin>
         <Col s={10}>
-          <b className="grey-text text-darken-2">{props.name}</b>
+        <Link to={`/user/${props.id}`}>
+            <b className="grey-text text-darken-2">{props.name}</b>
+          </Link>
         </Col>
         <Col s={2}>
           <InvisibleButton onClick={() => props.unfollow(props.id)}>
