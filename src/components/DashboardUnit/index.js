@@ -9,7 +9,7 @@ const DashboardUnit = () => (
     <Tab title="Followers" active>
       <FollowersContainer />
     </Tab>
-    <Tab title="Follwings">
+    <Tab title="Followings">
       <FollowingsContainer />
     </Tab>
     <Tab title="Tweets">

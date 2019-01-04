@@ -1,0 +1,1 @@
+export const GET_FOLLOWERS = 'followers/GET_FOLLOWERS';
